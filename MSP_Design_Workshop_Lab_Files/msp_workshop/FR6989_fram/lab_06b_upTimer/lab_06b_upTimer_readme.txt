@@ -1,0 +1,294 @@
+lab_06b_upTimer
+
+In this timer lab, we switch our code from counting in the "Continuous" mode
+to the "Up" mode. This gives us more flexibility to select the frequency for
+generating interrupts and output signals.
+
+As we write the ISR code, you should see that TIMER_A has two interupts: 
+- One is dedicated to CCR0 (Capture and Compare Register 0).
+- The second handles all the other timer interrupts
+
+In this lab, our goal is to create "both" timer interrupts every 1 second.
+
+In our previous lab exercise, we created the group (non-dedicated) 
+timer ISR. This lab adds an additional ISR for the dedicated (CCR0 based) 
+interrupt. Each of our two ISR's will toggle a different colored LED.
+
+Basic Steps:
+- Copy project from lab_06a_timer (your solution or the workshop solution)
+- Modify timer configuration function to accomodate "up" mode
+- Write an additional Timer ISR for CCR0
+- Run and observe the LED flashing
+
+File source code in this readme file:
+- main.c
+- myGpio.c
+- myTimers.c
+
+Final code ... you can copy from this if you want to save typing time & effort.
+
+
+// ----------------------------------------------------------------------------
+// main.c  (for lab_06b_upTimer project) ('FR6989 Launchpad)
+// ----------------------------------------------------------------------------
+
+//***** Header Files **********************************************************
+#include <driverlib.h>
+#include "myGpio.h"
+#include "myClocks.h"
+#include "myTimers.h"
+
+//***** Prototypes ************************************************************
+
+
+//***** Defines ***************************************************************
+
+
+//***** Global Variables ******************************************************
+
+
+//*****************************************************************************
+// Main
+//*****************************************************************************
+void main (void)
+{
+    // Stop watchdog timer
+    WDT_A_hold( WDT_A_BASE );
+
+    // Initialize GPIO
+    initGPIO();
+
+    // Initialize clocks
+    initClocks();
+
+    // Initialize timers
+    initTimers();
+
+    __bis_SR_register( GIE );                                                   // Enable interrupts globally
+
+    while(1) {
+        __no_operation();                                                       // Placeholder for while loop (not required)
+    }
+}
+
+
+
+// ----------------------------------------------------------------------------
+// myGpio.c  ('FR6989 Launchpad)
+// ----------------------------------------------------------------------------
+
+//***** Header Files **********************************************************
+#include <driverlib.h>                                                          // DriverLib include file
+#include "myGpio.h"
+
+
+//***** Defines ***************************************************************
+
+
+//***** Global Variables ******************************************************
+
+
+//*****************************************************************************
+// Initialize GPIO
+//*****************************************************************************
+void initGPIO(void) {
+
+    //**************************************************************************
+	// Configure LaunchPad LEDs
+    //**************************************************************************
+    // Set pin P1.0 to output direction and turn LED off
+    GPIO_setAsOutputPin( GPIO_PORT_P1, GPIO_PIN0 );                             // Red LED (LED1)
+    GPIO_setOutputLowOnPin( GPIO_PORT_P1, GPIO_PIN0 );
+
+    // Set pin P9.7 to output direction and turn LED off
+    GPIO_setAsOutputPin( GPIO_PORT_P9, GPIO_PIN7 );                             // Green LED (LED2)
+    GPIO_setOutputLowOnPin( GPIO_PORT_P9, GPIO_PIN7 );
+
+    //**************************************************************************
+    // Unlock pins (required for most FRAM devices)
+    // Unless waking from LPMx.5, this should be done before clearing and enabling GPIO port interrupts
+    //**************************************************************************
+    PMM_unlockLPM5();
+
+    //**************************************************************************
+    // Configure LaunchPad Buttons
+    //**************************************************************************
+//    // Set P1.1 as input with pull-up resistor (for push button 1)
+//    //  configure interrupt on low-to-high transition
+//    //  and then clear flag and enable the interrupt
+//    GPIO_setAsInputPinWithPullUpResistor( GPIO_PORT_P1, GPIO_PIN1 );
+//    GPIO_selectInterruptEdge ( GPIO_PORT_P1, GPIO_PIN1, GPIO_LOW_TO_HIGH_TRANSITION );
+//    GPIO_clearInterrupt ( GPIO_PORT_P1, GPIO_PIN1 );
+//    GPIO_enableInterrupt ( GPIO_PORT_P1, GPIO_PIN1 );
+//
+//    // Set P1.2 as input with pull-up resistor (for push button 2)
+//    //  configure interrupt on low-to-high transition
+//    //  and then clear flag and enable the interrupt
+//    GPIO_setAsInputPinWithPullUpResistor( GPIO_PORT_P1, GPIO_PIN2 );
+//    GPIO_selectInterruptEdge ( GPIO_PORT_P1, GPIO_PIN2, GPIO_LOW_TO_HIGH_TRANSITION );
+//    GPIO_clearInterrupt ( GPIO_PORT_P1, GPIO_PIN2 );
+//    GPIO_enableInterrupt ( GPIO_PORT_P1, GPIO_PIN2 );
+
+    //**************************************************************************
+    // Configure external crystal pins
+    //**************************************************************************
+    // Set LFXT (low freq crystal pins) to crystal input (rather than GPIO)
+    // Since HFXT is not used, we don't need to set these pins. But for the 
+    // record, they are:
+    //              GPIO_PIN6                            // HFXTIN on PJ.6
+    //              GPIO_PIN7                            // HFXOUT on PJ.7
+    GPIO_setAsPeripheralModuleFunctionInputPin(
+            GPIO_PORT_PJ,
+            GPIO_PIN4 +                                  // LFXIN  on PJ.4
+            GPIO_PIN5 ,                                  // LFXOUT on PJ.5
+            GPIO_PRIMARY_MODULE_FUNCTION
+    );
+
+    //**************************************************************************
+    // Output MSP clock signals to external pins
+    // - This allows verifying the clocks with a logic analyzer
+    //**************************************************************************
+    // Ouput MCLK on P4.0, ACLK on P4.1
+    // Note, all three clocks (MCLK, SMCLK, ACLK) are each available on 4 different 
+	// I/O pins; though, we're only showing these two because they are the only
+    // ones routed to BoosterPack pins
+//    GPIO_setAsPeripheralModuleFunctionOutputPin(
+//                    GPIO_PORT_P4,                         
+//                    GPIO_PIN0 +                          // MCLK on P4.0
+//                    GPIO_PIN1 ,                          // ACLK on P4.1
+//                    GPIO_TERNARY_MODULE_FUNCTION
+//    );
+}
+
+
+//*****************************************************************************
+// Interrupt Service Routines
+//*****************************************************************************
+//#pragma vector=PORT1_VECTOR
+//__interrupt void pushbutton_ISR (void)
+//{
+//    switch( __even_in_range( P1IV, P1IV_P1IFG7 )) {
+//        case P1IV_NONE:   break;                               // None
+//        case P1IV_P1IFG0:                                      // Pin 0
+//             __no_operation();
+//             break;
+//       case P1IV_P1IFG1:                                       // Pin 1 (button 1)
+//            GPIO_toggleOutputOnPin( GPIO_PORT_P1, GPIO_PIN0 ); // Turn on LED 1
+//            break;
+//       case P1IV_P1IFG2:                                       // Pin 2 (button 2)
+//           GPIO_toggleOutputOnPin( GPIO_PORT_P9, GPIO_PIN7 );  // Turn on LED 2
+//            break;
+//       case P1IV_P1IFG3:                                       // Pin 3
+//            __no_operation();
+//            break;
+//       case P1IV_P1IFG4:                                       // Pin 4
+//            __no_operation();
+//            break;
+//       case P1IV_P1IFG5:                                       // Pin 5
+//            __no_operation();
+//            break;
+//       case P1IV_P1IFG6:                                       // Pin 6
+//            __no_operation();
+//            break;
+//       case P1IV_P1IFG7:                                       // Pin 7
+//            __no_operation();
+//            break;
+//       default:   _never_executed();
+//    }
+//}
+
+
+// ----------------------------------------------------------------------------
+// myTimers.c  (for lab_06b_upTimer project) ('FR6989 Launchpad)
+// ----------------------------------------------------------------------------
+
+//***** Header Files **********************************************************
+#include <driverlib.h>
+#include "myTimers.h"
+
+//***** Defines ***************************************************************
+
+
+//***** Global Variables ******************************************************
+
+
+//*****************************************************************************
+// Initialize Timer
+//*****************************************************************************
+void initTimers(void)
+{
+    // 1. Setup Timer (TAR, TACTL)
+    //    TimerA1 in Up mode using ACLK
+    //    Toggle LED1 (Red) on/off every second using CCR0IFG
+    //    Toggle LED2 (Green) on/off every second using TA1IFG
+    Timer_A_initUpModeParam initUpParam = { 0 };
+        initUpParam.clockSource = TIMER_A_CLOCKSOURCE_ACLK;                       // Use ACLK (slower clock)
+        initUpParam.clockSourceDivider = TIMER_A_CLOCKSOURCE_DIVIDER_1;           // Input clock = ACLK / 1 = 32KHz
+        initUpParam.timerPeriod = 0xFFFF / 2;                                     // Period (0xFFFF/2):  8000 / 32Khz = 1 second
+        initUpParam.timerInterruptEnable_TAIE = TIMER_A_TAIE_INTERRUPT_ENABLE;    // Enable TAR -> 0 interrupt
+        initUpParam.captureCompareInterruptEnable_CCR0_CCIE =
+                TIMER_A_CCIE_CCR0_INTERRUPT_ENABLE;                               // Enable CCR0 compare interrupt
+        initUpParam.timerClear = TIMER_A_DO_CLEAR;                                // Clear TAR & clock divider
+        initUpParam.startTimer = false;                                           // Don't start the timer, yet
+    Timer_A_initUpMode( TIMER_A1_BASE, &initUpParam );                            // Set up Timer A1
+
+    // 2. Setup Capture & Compare features
+       // This example does not use these features
+       // CCR0 is setup by the Timer_A_initUpMode function
+
+    // 3. Clear/enable flags and start timer
+    Timer_A_clearTimerInterrupt( TIMER_A1_BASE );                                 // Clear TA1IFG
+    Timer_A_clearCaptureCompareInterrupt( TIMER_A1_BASE,
+        TIMER_A_CAPTURECOMPARE_REGISTER_0                                         // Clear CCR0IFG
+    );
+
+    //These two enables are already done by the configureUpMode function
+    //Timer_A_enableInterrupt( TIMER_A1_BASE );                                   // Enable TA1IFG (TAR rollover to 0)
+    //Timer_A_enableCaptureCompareInterrupt( TIMER_A1_BASE,
+    //    TIMER_A_CAPTURECOMPARE_REGISTER_0                                       // Enable CCR0IFG
+    //);
+
+    Timer_A_startCounter(
+        TIMER_A1_BASE,
+        TIMER_A_UP_MODE
+    );
+}
+
+//*****************************************************************************
+// Interrupt Service Routines
+//*****************************************************************************
+#pragma vector=TIMER1_A0_VECTOR
+__interrupt void ccr0_ISR (void)
+{
+    // 4. Timer ISR and vector
+
+    // Toggle LED1 on/off
+    GPIO_toggleOutputOnPin( GPIO_PORT_P1, GPIO_PIN0 );
+}
+
+#pragma vector=TIMER1_A1_VECTOR
+__interrupt void timer1_ISR (void)
+{
+    // 4. Timer ISR and vector
+
+    switch( __even_in_range( TA1IV, TA1IV_TAIFG )) {
+     case TA1IV_NONE: break;                 // (0x00) None
+     case TA1IV_TACCR1:                      // (0x02) CCR1 IFG
+          _no_operation();
+           break;
+     case TA1IV_TACCR2:                      // (0x04) CCR2 IFG
+          _no_operation();
+           break;
+     case TA1IV_3: break;                    // (0x06) Reserved
+     case TA1IV_4: break;                    // (0x08) Reserved
+     case TA1IV_5: break;                    // (0x0A) Reserved
+     case TA1IV_6: break;                    // (0x0C) Reserved
+     case TA1IV_TAIFG:                       // (0x0E) TA1IFG - TAR overflow
+          // Toggle LED2 (Green) LED on/off
+          GPIO_toggleOutputOnPin( GPIO_PORT_P9, GPIO_PIN7 );
+          break;
+     default: _never_executed();
+    }
+}
+
+

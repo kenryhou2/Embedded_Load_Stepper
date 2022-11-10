@@ -1,0 +1,14 @@
+<projectSpec>
+  <project compilerBuildOptions="-I${PROJECT_ROOT}/driverlib/MSP430FR5xx_6xx --advice:power=&quot;none&quot;" device="MSP430FR6989" linkerBuildOptions="" name="lab_06d_simplePWM">
+    <file action="copy" path="C:\ti\msp\MSPWare_3_30_00_18\driverlib\driverlib\MSP430FR5xx_6xx" targetDirectory="driverlib" />
+    <file action="copy" path="..\lab_06d_simplePWM_readme.txt" />
+    <file action="copy" path="..\main.c" />
+    <file action="copy" path="..\myClocks.c" />
+    <file action="copy" path="..\myClocks.h" />
+    <file action="copy" path="..\myGpio.c" />
+    <file action="copy" path="..\myGpio.h" />
+    <file action="copy" path="..\myTimers.c" />
+    <file action="copy" path="..\myTimers.h" />
+    <file action="copy" path="..\unused_interrupts.c" />
+  </project>
+</projectSpec>

@@ -1,0 +1,3 @@
+We have provided this workspace folder for use in the workshop. While you can select most any directory on your computer to use as a CCS (Eclipse) workspace, it is convenient - for our workshop purposes - to choose a folder inside our workshop exercises folder.
+
+It keeps things "together" ... as well as helps the instructor help you (if anything were to go wrong during a lab).

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?ccsproject version="1.0"?>
+<projectOptions>
+	<ccsVersion value="12.0.0"/>
+	<deviceVariant value="MSP430FR6989"/>
+	<deviceFamily value="MSP430"/>
+	<deviceEndianness value="little"/>
+	<codegenToolVersion value="21.6.0.LTS"/>
+	<isElfFormat value="true"/>
+	<connection value="common/targetdb/connections/TIMSP430-USB.xml"/>
+	<linkerCommandFile value="lnk_msp430fr6989.cmd"/>
+	<rts value="libc.a"/>
+	<createSlaveProjects value=""/>
+	<templateProperties value="id=BlinkLED_MSP430FR6989.projectspec.test_out_of_box"/>
+	<origin value="C:\Users\a0496455\TI Drive\2021-2022\TI\Auto_PDS_rotation_2\projects\Embedded_load _stepper\MSP430_software\MSP-EXP430FR6989_Software_Examples_windows\MSP-EXP430FR6989_Software_Examples_windows\Firmware\Source\BlinkLED_MSP430FR6989\CCS\BlinkLED_MSP430FR6989.projectspec"/>
+	<filesToOpen value="main.c"/>
+	<isTargetManual value="false"/>
+</projectOptions>

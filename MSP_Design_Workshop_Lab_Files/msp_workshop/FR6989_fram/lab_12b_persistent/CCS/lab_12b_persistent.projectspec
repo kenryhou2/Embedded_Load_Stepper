@@ -1,0 +1,13 @@
+<projectSpec>
+  <project compilerBuildOptions="-I${PROJECT_ROOT}/driverlib/MSP430FR5xx_6xx --advice:power=&quot;none&quot;" device="MSP430FR6989" linkerBuildOptions="--heap_size=320" name="lab_12b_persistent">
+    <file action="copy" path="C:\ti\msp\MSPWare_2_21_00_39\driverlib\driverlib\MSP430FR5xx_6xx" targetDirectory="driverlib" />
+    <file action="copy" path="..\hello.c" />
+    <file action="copy" path="..\lab_12b_persistent_readme.txt" />
+    <file action="copy" path="..\myClocks.h" />
+    <file action="copy" path="..\myClocksWithCrystals.c" />
+    <file action="copy" path="..\myGpio.c" />
+    <file action="copy" path="..\myGpio.h" />
+    <file action="copy" path="..\myLcd.c" />
+    <file action="copy" path="..\myLcd.h" />
+  </project>
+</projectSpec>

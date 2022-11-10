@@ -1,0 +1,233 @@
+Tue Jan 12 13:33:24 2016:	* -----/|-------------------------------------------------------------------- *
+Tue Jan 12 13:33:24 2016:	*     / |__                                                                   *
+Tue Jan 12 13:33:24 2016:	*    /_   /   MSP430 Flasher v1.3.7                                           *
+Tue Jan 12 13:33:24 2016:	*      | /                                                                    *
+Tue Jan 12 13:33:24 2016:	* -----|/-------------------------------------------------------------------- *
+Tue Jan 12 13:33:24 2016:	*
+Tue Jan 12 13:33:24 2016:	* Evaluating triggers...done
+Tue Jan 12 13:33:24 2016:	* Checking for available FET debuggers: 
+Tue Jan 12 13:33:24 2016:	* Found USB FET @ COM124 <- Selected
+Tue Jan 12 13:33:24 2016:	* Initializing interface @ COM124...done
+Tue Jan 12 13:33:24 2016:	* Checking firmware compatibility: 
+Tue Jan 12 13:33:24 2016:	* The firmware of your FET is outdated.
+Tue Jan 12 13:33:24 2016:	- Would you like to update it? (Y/N): Tue Jan 12 13:33:31 2016:	y
+Tue Jan 12 13:33:31 2016:	
+*********************************************************
+Tue Jan 12 13:33:31 2016:	*                                                        
+Tue Jan 12 13:33:31 2016:	*  Initializing Update Bootloader.                       
+Tue Jan 12 13:33:31 2016:	*  Programming new firmware:                             
+Tue Jan 12 13:33:31 2016:	Tue Jan 12 13:33:31 2016:	*  PROGRESS BAR                                         
+Tue Jan 12 13:33:43 2016:	
+*  Update was successfully finished.                   
+Tue Jan 12 13:33:43 2016:	*                                                        
+Tue Jan 12 13:33:43 2016:	*********************************************************
+Tue Jan 12 13:33:43 2016:	
+Tue Jan 12 13:33:43 2016:	*  Exit Update Bootlader and reboot firmware.            
+Tue Jan 12 13:33:43 2016:	* FET firmware is up to date.
+Tue Jan 12 13:33:43 2016:	* Reading FW version...done
+Tue Jan 12 13:33:43 2016:	* Setting VCC to 3000 mV...done
+Tue Jan 12 13:33:45 2016:	* Accessing device...
+Tue Jan 12 13:33:46 2016:	# Exit: 16
+Tue Jan 12 13:33:46 2016:	# ERROR: Unknown device
+Tue Jan 12 13:33:46 2016:	* Powering down...done
+Tue Jan 12 13:33:46 2016:	* Disconnecting from device...done
+Tue Jan 12 13:33:46 2016:	* 
+Tue Jan 12 13:33:46 2016:	* ----------------------------------------------------------------------------
+Tue Jan 12 13:33:46 2016:	* Driver      : closed (Internal error)
+Tue Jan 12 13:33:46 2016:	* ----------------------------------------------------------------------------
+Tue Jan 12 13:33:46 2016:	*/
+Tue Jan 12 13:34:20 2016:	* -----/|-------------------------------------------------------------------- *
+Tue Jan 12 13:34:20 2016:	*     / |__                                                                   *
+Tue Jan 12 13:34:20 2016:	*    /_   /   MSP430 Flasher v1.3.7                                           *
+Tue Jan 12 13:34:20 2016:	*      | /                                                                    *
+Tue Jan 12 13:34:20 2016:	* -----|/-------------------------------------------------------------------- *
+Tue Jan 12 13:34:20 2016:	*
+Tue Jan 12 13:34:20 2016:	* Evaluating triggers...done
+Tue Jan 12 13:34:20 2016:	* Checking for available FET debuggers: 
+Tue Jan 12 13:34:20 2016:	* Found USB FET @ COM124 <- Selected
+Tue Jan 12 13:34:20 2016:	* Initializing interface @ COM124...done
+Tue Jan 12 13:34:20 2016:	* Checking firmware compatibility: 
+Tue Jan 12 13:34:20 2016:	* FET firmware is up to date.
+Tue Jan 12 13:34:20 2016:	* Reading FW version...done
+Tue Jan 12 13:34:20 2016:	* Setting VCC to 3000 mV...done
+Tue Jan 12 13:34:21 2016:	* Accessing device...
+Tue Jan 12 13:34:22 2016:	# Exit: 16
+Tue Jan 12 13:34:22 2016:	# ERROR: Unknown device
+Tue Jan 12 13:34:22 2016:	* Powering down...done
+Tue Jan 12 13:34:22 2016:	* Disconnecting from device...done
+Tue Jan 12 13:34:22 2016:	* 
+Tue Jan 12 13:34:22 2016:	* ----------------------------------------------------------------------------
+Tue Jan 12 13:34:22 2016:	* Driver      : closed (Internal error)
+Tue Jan 12 13:34:22 2016:	* ----------------------------------------------------------------------------
+Tue Jan 12 13:34:22 2016:	*/
+Tue Jan 12 13:35:32 2016:	* -----/|-------------------------------------------------------------------- *
+Tue Jan 12 13:35:32 2016:	*     / |__                                                                   *
+Tue Jan 12 13:35:32 2016:	*    /_   /   MSP430 Flasher v1.3.7                                           *
+Tue Jan 12 13:35:32 2016:	*      | /                                                                    *
+Tue Jan 12 13:35:32 2016:	* -----|/-------------------------------------------------------------------- *
+Tue Jan 12 13:35:32 2016:	*
+Tue Jan 12 13:35:32 2016:	* Evaluating triggers...done
+Tue Jan 12 13:35:32 2016:	* Checking for available FET debuggers: 
+Tue Jan 12 13:35:33 2016:	* Found USB FET @ COM124 <- Selected
+Tue Jan 12 13:35:33 2016:	* Initializing interface @ COM124...done
+Tue Jan 12 13:35:33 2016:	* Checking firmware compatibility: 
+Tue Jan 12 13:35:33 2016:	* The firmware of your FET is outdated.
+Tue Jan 12 13:35:33 2016:	- Would you like to update it? (Y/N): Tue Jan 12 13:35:37 2016:	n
+Tue Jan 12 13:35:37 2016:	* Warning: FW mismatch! Correct functionality not guaranteed!
+Tue Jan 12 13:35:37 2016:	* Reading FW version...done
+Tue Jan 12 13:35:37 2016:	* Setting VCC to 3000 mV...done
+Tue Jan 12 13:35:38 2016:	* Accessing device...
+Tue Jan 12 13:35:39 2016:	# Exit: 16
+Tue Jan 12 13:35:39 2016:	# ERROR: Unknown device
+Tue Jan 12 13:35:39 2016:	* Powering down...done
+Tue Jan 12 13:35:39 2016:	* Disconnecting from device...done
+Tue Jan 12 13:35:39 2016:	* 
+Tue Jan 12 13:35:39 2016:	* ----------------------------------------------------------------------------
+Tue Jan 12 13:35:39 2016:	* Driver      : closed (Internal error)
+Tue Jan 12 13:35:39 2016:	* ----------------------------------------------------------------------------
+Tue Jan 12 13:35:39 2016:	*/
+Tue Jan 12 13:35:44 2016:	* -----/|-------------------------------------------------------------------- *
+Tue Jan 12 13:35:44 2016:	*     / |__                                                                   *
+Tue Jan 12 13:35:44 2016:	*    /_   /   MSP430 Flasher v1.3.7                                           *
+Tue Jan 12 13:35:44 2016:	*      | /                                                                    *
+Tue Jan 12 13:35:44 2016:	* -----|/-------------------------------------------------------------------- *
+Tue Jan 12 13:35:44 2016:	*
+Tue Jan 12 13:35:44 2016:	* Evaluating triggers...done
+Tue Jan 12 13:35:44 2016:	* Checking for available FET debuggers: 
+Tue Jan 12 13:35:44 2016:	* Found USB FET @ COM124 <- Selected
+Tue Jan 12 13:35:44 2016:	* Initializing interface @ COM124...done
+Tue Jan 12 13:35:44 2016:	* Checking firmware compatibility: 
+Tue Jan 12 13:35:44 2016:	* The firmware of your FET is outdated.
+Tue Jan 12 13:35:44 2016:	- Would you like to update it? (Y/N): Tue Jan 12 13:35:46 2016:	Y
+Tue Jan 12 13:35:46 2016:	
+*********************************************************
+Tue Jan 12 13:35:46 2016:	*                                                        
+Tue Jan 12 13:35:46 2016:	*  Initializing Update Bootloader.                       
+Tue Jan 12 13:35:46 2016:	*  Programming new firmware:                             
+Tue Jan 12 13:35:46 2016:	Tue Jan 12 13:35:46 2016:	*  PROGRESS BAR                                         
+Tue Jan 12 13:35:58 2016:	
+*  Update was successfully finished.                   
+Tue Jan 12 13:35:58 2016:	*                                                        
+Tue Jan 12 13:35:58 2016:	*********************************************************
+Tue Jan 12 13:35:58 2016:	
+Tue Jan 12 13:35:58 2016:	*  Exit Update Bootlader and reboot firmware.            
+Tue Jan 12 13:35:58 2016:	* FET firmware is up to date.
+Tue Jan 12 13:35:58 2016:	* Reading FW version...done
+Tue Jan 12 13:35:58 2016:	* Setting VCC to 3000 mV...done
+Tue Jan 12 13:36:01 2016:	* Accessing device...
+Tue Jan 12 13:36:02 2016:	# Exit: 16
+Tue Jan 12 13:36:02 2016:	# ERROR: Unknown device
+Tue Jan 12 13:36:02 2016:	* Powering down...done
+Tue Jan 12 13:36:02 2016:	* Disconnecting from device...done
+Tue Jan 12 13:36:02 2016:	* 
+Tue Jan 12 13:36:02 2016:	* ----------------------------------------------------------------------------
+Tue Jan 12 13:36:02 2016:	* Driver      : closed (Internal error)
+Tue Jan 12 13:36:02 2016:	* ----------------------------------------------------------------------------
+Tue Jan 12 13:36:02 2016:	*/
+Tue Jan 12 13:39:26 2016:	* -----/|-------------------------------------------------------------------- *
+Tue Jan 12 13:39:26 2016:	*     / |__                                                                   *
+Tue Jan 12 13:39:26 2016:	*    /_   /   MSP430 Flasher v1.3.7                                           *
+Tue Jan 12 13:39:26 2016:	*      | /                                                                    *
+Tue Jan 12 13:39:26 2016:	* -----|/-------------------------------------------------------------------- *
+Tue Jan 12 13:39:26 2016:	*
+Tue Jan 12 13:39:26 2016:	* Evaluating triggers...
+Tue Jan 12 13:39:26 2016:	* Invalid argument for -e trigger. Default used (ERASE_ALL).
+Tue Jan 12 13:39:26 2016:	* Checking for available FET debuggers: 
+Tue Jan 12 13:39:26 2016:	* Found USB FET @ COM124 <- Selected
+Tue Jan 12 13:39:26 2016:	* Initializing interface @ COM124...done
+Tue Jan 12 13:39:26 2016:	* Checking firmware compatibility: 
+Tue Jan 12 13:39:26 2016:	* FET firmware is up to date.
+Tue Jan 12 13:39:26 2016:	* Reading FW version...done
+Tue Jan 12 13:39:26 2016:	* Setting VCC to 3000 mV...done
+Tue Jan 12 13:39:27 2016:	* Accessing device...
+Tue Jan 12 13:39:28 2016:	# Exit: 16
+Tue Jan 12 13:39:28 2016:	# ERROR: Unknown device
+Tue Jan 12 13:39:28 2016:	* Powering down...done
+Tue Jan 12 13:39:28 2016:	* Disconnecting from device...done
+Tue Jan 12 13:39:28 2016:	* 
+Tue Jan 12 13:39:28 2016:	* ----------------------------------------------------------------------------
+Tue Jan 12 13:39:28 2016:	* Driver      : closed (Internal error)
+Tue Jan 12 13:39:28 2016:	* ----------------------------------------------------------------------------
+Tue Jan 12 13:39:28 2016:	*/
+Tue Jan 12 16:33:25 2016:	* -----/|-------------------------------------------------------------------- *
+Tue Jan 12 16:33:25 2016:	*     / |__                                                                   *
+Tue Jan 12 16:33:25 2016:	*    /_   /   MSP430 Flasher v1.3.7                                           *
+Tue Jan 12 16:33:25 2016:	*      | /                                                                    *
+Tue Jan 12 16:33:25 2016:	* -----|/-------------------------------------------------------------------- *
+Tue Jan 12 16:33:25 2016:	*
+Tue Jan 12 16:33:25 2016:	* Evaluating triggers...done
+Tue Jan 12 16:33:25 2016:	* Checking for available FET debuggers: 
+Tue Jan 12 16:33:25 2016:	* Found USB FET @ COM124 <- Selected
+Tue Jan 12 16:33:25 2016:	* Initializing interface @ COM124...done
+Tue Jan 12 16:33:25 2016:	* Checking firmware compatibility: 
+Tue Jan 12 16:33:25 2016:	* FET firmware is up to date.
+Tue Jan 12 16:33:25 2016:	* Reading FW version...done
+Tue Jan 12 16:33:25 2016:	* Setting VCC to 3000 mV...done
+Tue Jan 12 16:33:28 2016:	* Accessing device...
+Tue Jan 12 16:33:29 2016:	# Exit: 16
+Tue Jan 12 16:33:29 2016:	# ERROR: Unknown device
+Tue Jan 12 16:33:29 2016:	* Powering down...done
+Tue Jan 12 16:33:29 2016:	* Disconnecting from device...done
+Tue Jan 12 16:33:29 2016:	* 
+Tue Jan 12 16:33:29 2016:	* ----------------------------------------------------------------------------
+Tue Jan 12 16:33:29 2016:	* Driver      : closed (Internal error)
+Tue Jan 12 16:33:29 2016:	* ----------------------------------------------------------------------------
+Tue Jan 12 16:33:29 2016:	*/
+Tue Jan 12 16:34:17 2016:	* -----/|-------------------------------------------------------------------- *
+Tue Jan 12 16:34:17 2016:	*     / |__                                                                   *
+Tue Jan 12 16:34:17 2016:	*    /_   /   MSP430 Flasher v1.3.7                                           *
+Tue Jan 12 16:34:17 2016:	*      | /                                                                    *
+Tue Jan 12 16:34:17 2016:	* -----|/-------------------------------------------------------------------- *
+Tue Jan 12 16:34:17 2016:	*
+Tue Jan 12 16:34:17 2016:	* Evaluating triggers...done
+Tue Jan 12 16:34:17 2016:	* Checking for available FET debuggers: 
+Tue Jan 12 16:34:17 2016:	* Found USB FET @ COM98 <- Selected
+Tue Jan 12 16:34:17 2016:	* Initializing interface @ COM98...done
+Tue Jan 12 16:34:17 2016:	* Checking firmware compatibility: 
+Tue Jan 12 16:34:17 2016:	* The firmware of your FET is outdated.
+Tue Jan 12 16:34:17 2016:	- Would you like to update it? (Y/N): Tue Jan 12 16:34:21 2016:	Y
+Tue Jan 12 16:34:21 2016:	
+*********************************************************
+Tue Jan 12 16:34:21 2016:	*                                                        
+Tue Jan 12 16:34:21 2016:	*  Initializing Update Bootloader.                       
+Tue Jan 12 16:34:21 2016:	*  Programming new firmware:                             
+Tue Jan 12 16:34:21 2016:	Tue Jan 12 16:34:21 2016:	*  PROGRESS BAR                                         
+Tue Jan 12 16:34:33 2016:	
+*  Update was successfully finished.                   
+Tue Jan 12 16:34:33 2016:	*                                                        
+Tue Jan 12 16:34:33 2016:	*********************************************************
+Tue Jan 12 16:34:33 2016:	
+Tue Jan 12 16:34:33 2016:	*  Exit Update Bootlader and reboot firmware.            
+Tue Jan 12 16:34:33 2016:	* FET firmware is up to date.
+Tue Jan 12 16:34:33 2016:	* Reading FW version...done
+Tue Jan 12 16:34:33 2016:	* Setting VCC to 3000 mV...done
+Tue Jan 12 16:34:35 2016:	* Accessing device...done
+Tue Jan 12 16:34:36 2016:	* Reading device information...done
+Tue Jan 12 16:34:36 2016:	* Loading file into device...done
+Tue Jan 12 16:34:36 2016:	* Verifying memory (lab_02b_blink_solution.txt)...done
+Tue Jan 12 16:34:37 2016:	* 
+Tue Jan 12 16:34:37 2016:	* ----------------------------------------------------------------------------
+Tue Jan 12 16:34:37 2016:	* Arguments   : -n MSP430FR5969 -w lab_02b_blink_solution.txt -v 
+Tue Jan 12 16:34:37 2016:	* ----------------------------------------------------------------------------
+Tue Jan 12 16:34:37 2016:	* Driver      : loaded
+Tue Jan 12 16:34:37 2016:	* Dll Version : -1
+Tue Jan 12 16:34:37 2016:	* FwVersion   : 30501000
+Tue Jan 12 16:34:37 2016:	* Interface   : TIUSB
+Tue Jan 12 16:34:37 2016:	* HwVersion   : E 4.0
+Tue Jan 12 16:34:37 2016:	* JTAG Mode   : AUTO
+Tue Jan 12 16:34:37 2016:	* Device      : MSP430FR5969
+Tue Jan 12 16:34:37 2016:	* EEM         : Level 5, ClockCntrl 2
+Tue Jan 12 16:34:37 2016:	* Erase Mode  : ERASE_ALL
+Tue Jan 12 16:34:37 2016:	* Prog.File   : lab_02b_blink_solution.txt
+Tue Jan 12 16:34:37 2016:	* Verified    : TRUE
+Tue Jan 12 16:34:37 2016:	* BSL Unlock  : FALSE
+Tue Jan 12 16:34:37 2016:	* InfoA Access: FALSE
+Tue Jan 12 16:34:37 2016:	* VCC OFF
+Tue Jan 12 16:34:37 2016:	* ----------------------------------------------------------------------------
+Tue Jan 12 16:34:37 2016:	* Powering down...done
+Tue Jan 12 16:34:37 2016:	* Disconnecting from device...done
+Tue Jan 12 16:34:37 2016:	* 
+Tue Jan 12 16:34:37 2016:	* ----------------------------------------------------------------------------
+Tue Jan 12 16:34:37 2016:	* Driver      : closed (No error)
+Tue Jan 12 16:34:37 2016:	* ----------------------------------------------------------------------------
+Tue Jan 12 16:34:37 2016:	*/

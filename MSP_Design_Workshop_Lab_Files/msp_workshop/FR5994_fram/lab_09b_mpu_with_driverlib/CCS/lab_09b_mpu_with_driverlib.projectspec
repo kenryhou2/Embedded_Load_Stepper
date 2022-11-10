@@ -1,0 +1,12 @@
+<projectSpec>
+  <project compilerBuildOptions="-I${PROJECT_ROOT}/driverlib/MSP430FR5xx_6xx --advice:power=&quot;none&quot;" device="MSP430FR5969" linkerBuildOptions="--heap_size=320" name="lab_09b_mpu_with_driverlib">
+    <file action="copy" path="C:\ti\msp\MSPWare_2_30_00_49\driverlib\driverlib\MSP430FR5xx_6xx" targetDirectory="driverlib" />
+    <file action="copy" path="..\hello.c" />
+    <file action="copy" path="..\lab_09b_mpu_with_driverlib_readme.txt" />
+    <file action="copy" path="..\myMPU.c" />
+    <file action="copy" path="..\myMPU.h" />
+    <file action="copy" path="..\system_isr_routines.c" />
+    <file action="copy" path="..\system_isr_routines.h" />
+    <file action="copy" path="..\watch_expressions.txt" />
+  </project>
+</projectSpec>

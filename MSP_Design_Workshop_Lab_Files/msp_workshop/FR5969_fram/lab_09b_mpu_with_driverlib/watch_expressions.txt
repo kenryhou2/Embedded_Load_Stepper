@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExportImportMemento.1>
+<VarMeta IMemento.internal.id="count"/>
+<VarMeta IMemento.internal.id="iTest"/>
+<VarMeta IMemento.internal.id="ptr"/>
+<VarMeta IMemento.internal.id="SYSNMIflag"/>
+</ExportImportMemento.1>

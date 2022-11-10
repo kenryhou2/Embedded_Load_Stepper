@@ -1,0 +1,7 @@
+<projectSpec>
+  <project compilerBuildOptions="-I${PROJECT_ROOT}/driverlib/MSP430F5xx_6xx --advice:power=&quot;none&quot;" device="MSP430F5529" linkerBuildOptions="--heap_size=320" name="lab_09a_low_wear_flash_msp430f5529">
+    <file action="copy" path="C:\ti\msp\MSPWare_3_30_00_18\driverlib\driverlib\MSP430F5xx_6xx" targetDirectory="driverlib" />
+    <file action="copy" path="..\hello_low_wear.c" />
+    <file action="copy" path="..\lab_09a_low_wear_flash_readme.txt" />
+  </project>
+</projectSpec>
